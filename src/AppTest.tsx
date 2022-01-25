@@ -1,14 +1,13 @@
-import "./App.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Table } from "antd";
 
-export const App = ({ ...props }: Props) => {
+export const AppTest = ({ ...props }: Props) => {
   const [data, setData] = useState();
   useEffect(() => apiCall(setData), []);
   return (
     <div>
-      <Table columns={App.getColumns()} dataSource={data} key="1"/>
+      <Table columns={AppTest.getColumns()} dataSource={data} />
     </div>
   );
 };
@@ -24,7 +23,7 @@ const apiCall = (setData: React.Dispatch<React.SetStateAction<undefined>>) => {
     });
 };
 
-App.getColumns = () => {
+AppTest.getColumns = () => {
   return [
     {
       title: "ID",
